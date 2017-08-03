@@ -1,0 +1,1040 @@
+@charset "utf-8";
+/*
+ * Salon
+ */
+
+/* demo you */
+.nav-menu .children { z-index:4; }
+
+/* スケジューラー */
+#scheduler_here {
+/*	width:680px;
+*/	height:600px;
+	border:solid 1px #003399;
+}
+
+
+
+#working_input_form,
+#customer_booking_form {
+	position:absolute;
+	top:100px;
+	left:200px;
+	z-index:10001;
+	display:none;
+	background-color:white;
+	border:2px outset gray;
+	padding:20px;
+/*	font-family:Tahoma; */
+	font-family:inherit;
+	font-size:10pt;
+}
+
+#working_input_form label{
+	width:200px !important;
+}
+
+
+
+.overlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+/*  background: url(images/black.png); */
+}
+.overlay img {
+  display: inline-block;
+  position: absolute;
+  width: 800px;
+  -webkit-box-shadow: 0px 0px 20px 0px #333;
+  -moz-box-shadow: 0px 0px 20px 0px #333;
+  box-shadow: 0px 0px 20px 0px #333;
+}
+#cursol {
+  position: absolute;
+  padding: 5px;
+  color: #fff;
+  background: #666;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 5px 0px #333;
+  -moz-box-shadow: 2px 2px 5px 0px #333;
+  box-shadow: 2px 2px 5px 0px #333;
+}
+
+
+
+/*ボタン */
+.sl_button{
+	display: inline-block;
+	zoom: 1;
+	padding: 6px 10px;
+	margin: 0;
+	cursor: pointer;
+	border: 1px solid #bbb;
+	overflow: visible;
+	font: bold 13px arial, helvetica, sans-serif;
+	text-decoration: none;
+	white-space: nowrap;
+	color: #555 !important;
+	transition: background-color .2s ease-out;
+	background-color: #ddd !important;
+	background-image: none !important;
+	background-clip: padding-box !important; /* Fix bleeding */
+	border-radius: 3px !important;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .3),
+							0 2px 2px -1px rgba(0, 0, 0, .5),
+							0 1px 0 rgba(255, 255, 255, .3) inset;
+	text-shadow: 0 1px 0 rgba(255,255,255, .9);
+}
+
+.sl_button_short {
+	width:auto;
+	height:30px;
+}
+
+.sl_button:hover{
+	background-color: #eee;
+	color: #555;
+}
+
+.sl_button:active{
+	background: #e9e9e9;
+	position: relative;
+	top: 1px;
+	text-shadow: none;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+	outline: none;
+}
+
+.sl_button[disabled], .sl_button[disabled]:hover, .sl_button[disabled]:active{
+  border-color: #eaeaea;
+  background: #fafafa;
+  cursor: default;
+  position: static;
+  color: #999;
+  /* Usually, !important should be avoided but here it's really needed :) */
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.sl_coler_not_complete {
+  color: #00F !important;
+}
+
+#booking_login_div .sl_short_width,
+#salon_button_div .sl_short_width {
+	width:50px;
+}
+
+
+#booking_button_div .sl_button {
+	width:120px;
+	margin-top:30px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.sl_short_title_width{
+	width:50px;
+	padding-left:10px;
+	padding-right:2px;
+}
+
+/* ----------- photo ----------- */
+#uploadedImageView {
+	margin-top: 10px;
+	margin-left: 310px;
+	padding-top: 10px;
+	overflow: auto;
+}
+#uploadedImageView img {
+	border: 1px solid #DFDFDF;
+	padding: 5px;
+}
+
+
+
+#salon_confirm_detail table{
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px #999;
+  font-size: 100%;
+}
+
+#salon_confirm_detail th,
+#salon_confirm_detail td {
+  border: solid 1px #999;
+  padding: 4px 6px;
+  font-size: 100%;
+  color: #000000;
+}
+
+#salon_confirm_detail th {
+  background: #E6E6E6;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media screen and (max-width:640px) {
+    #salon_confirm_detail th, #salon_confirm_detail td{
+        display:block;
+    }
+}
+
+.spacer{clear:both; height:1px;}
+
+#data_detail{
+	border:solid 1px #b7ddf2;
+	/*border:solid 2px #b7ddf2;*/
+	/*background:#ebf4fb;*/
+	width:700px;
+	margin-top:10px;
+	margin-bottom:10px;
+	/*margin:0 auto;*/
+	padding:14px;
+	font-size:12px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+}
+
+#data_detail label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:300px;
+	float:left;
+	line-height:12px;
+}
+
+
+#data_detail label.sl_detail_out {
+	padding-top:7px;
+	line-height:12px;
+}
+
+#data_detail .small{
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+/*	width:200px; */
+}
+
+#booking_login_div .small
+{
+	color:#666666;
+/*	display:block; */
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+}
+
+#booking_login_div .sl_req,
+#data_detail .sl_req{
+	color:#F00;
+}
+
+
+#booking_login_div span.error,
+#data_detail span.error {
+	color:#F00;
+}
+#booking_login_div span.sl_detail_out ,
+#data_detail span.sl_detail_out {
+	float:left;
+	font-size:15px;
+	padding:4px 2px;
+	border:none;
+	width:200px;
+	height:25px;
+	margin:2px 100px 2px 10px;
+}
+
+.sl_admin_span {
+	margin:2px 2px 10px 10px;
+	padding:3px;
+}
+
+
+#data_detail input,
+#data_detail select,
+#data_detail textarea{
+	float:left;
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:200px;
+	margin:2px 100px 20px 10px;
+}
+
+#data_detail textarea{
+	resize:vertical;
+	width:360px;
+	margin-right:0px;
+}
+
+
+#data_detail .sl_short_width {
+	width:50px;
+	margin-right:250px;
+}
+
+#data_detail .sl_middle_width {
+	width:100px;
+	margin-right:200px;
+}
+
+
+
+#data_detail .sl_checkbox  {
+	float:left;
+	height:40px;
+}
+
+#data_detail .sl_role_table  {
+	float:left;
+	margin-left:10px;
+}
+
+#data_detail .sl_role_table table {
+	border:solid 1px #aacfe4;
+
+}
+
+#data_detail .sl_role_table label {
+	width:200px;
+	margin:0 0 0 10px;
+}
+
+#data_detail .sl_role_table input {
+	width:20px;
+	margin:0 0 0 10px;
+}
+
+
+#data_detail .sl_checkbox label{
+	font-weight:normal;
+	text-align:left;
+	width:20px;
+}
+#data_detail .sl_checkbox input{
+	padding:0px 0px;
+	border:solid 1px #aacfe4;
+	width:15px;
+	margin:2px 0 10px 10px;
+}
+
+#data_detail .sl_radio  {
+	border:none;
+	width:15px;
+}
+
+
+/* firefox で下線が消える対処 */
+#data_detail select {
+	font-size:13px;
+}
+
+#display_shortcode {
+	width:230px;
+}
+
+#data_detail #regist_customer{
+	padding:0px 0px;
+	width:15px;
+	margin:2px 100px 20px 10px;
+}
+
+
+#booking_login_div {
+	border:solid 1px #b7ddf2;
+	max-width:550px;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:14px;
+	font-size:12px;
+}
+
+#booking_login_div input {
+}
+
+#booking_login_div label {
+	display:inline-block;
+	width:80px;
+}
+
+#booking_login_div .login_inner {
+
+	margin:auto;
+	max-width:300px;
+
+}
+
+#button_login {
+    display: block;
+    margin: 0 auto;
+}
+/*
+#booking_login_div input {
+	float:left;
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:150px;
+	margin:2px 10px 20px 10px;
+}
+	#booking_login_div label {
+		display:block;
+		font-weight:bold;
+		text-align:right;
+		width:200px;
+		float:left;
+	}
+
+#booking_login_div table td {
+	border:none;
+	padding:0px;
+}
+
+
+#booking_login_div table {
+	border:none;
+	margin:0px;
+}
+
+*/
+
+#photo_wrap input {
+	display:inline;
+	width:120px;
+	float:none;
+	margin-right:0px;
+}
+
+
+/* 詳細入力で、1行に複数項目の場合 */
+#multi_item_wrap {
+	display:block;
+	font-size:12px;
+	padding:0px 0px;
+	border:none;
+	width:700px;
+	margin:0px 0px 0px 0px;
+	float:left;
+}
+
+#multi_item_wrap input,
+#multi_item_wrap label {
+	display:inline;
+	width:30px;
+	float:none;
+	margin-right:0px;
+}
+
+#multi_item_wrap #name {
+	width :200px;
+}
+
+#multi_item_wrap #sp_date,
+#multi_item_wrap #user_login,
+#date_time_wrap #target_day {
+	width:100px;
+	margin-right:0px;
+}
+
+#date_time_wrap #time_from_aft,
+#date_time_wrap #time_to_aft {
+	width:100px;
+	margin-right:10px;
+	margin-bottom:22px;
+	font-size:12px;
+}
+
+#date_time_wrap #start_time {
+	width:100px;
+	margin-right:10px;
+	margin-bottom:22px;
+	font-size:12px;
+}
+#date_time_wrap span#end_time {
+	width:200px;
+	display:block;
+	float:left;
+	font-size:12px;
+	margin-top:5px;
+	margin-bottom:35px;
+}
+
+
+#multi_item_wrap #mail {
+	width:200px;
+	margin-right:0px;
+}
+
+
+#multi_item_wrap #button_search  {
+	width:80px;
+}
+
+#multi_item_wrap #button_sp_date_insert {
+	width:40px;
+}
+
+label#config_only_branch_lbl,
+label#sp_date_lbl,
+label#mail_lbl  {
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:300px;
+	float:left;
+}
+
+
+/* itemの数は不定なのでheightをautoにしとく */
+.sl_detail_table_div,
+#working_cds,
+#item_cds {
+	display:block;
+	font-size:12px;
+	padding:0px 0px;
+	border:none;
+	width:400px;
+	margin:0px 0px 0px 0px;
+	float:left;
+	height:auto !important;
+}
+
+/* #data_detail .sl_checkbox labelよりこちらを優先する */
+#working_cds label{
+	width:auto !important;
+}
+/*#item_cds label{
+	width:100px !important;
+}
+*/
+.config_item_wrap {
+	display:block;
+	font-size:12px;
+	padding:0px 0px;
+	border:none;
+	width:700px;
+	margin:0px 0px 20px 0px;
+	float:left;
+}
+
+
+.config_item_inline_input {
+	display:inline !important;
+	float:none !important;
+	margin:2px 10px 0px 10px !important;
+	width:15px !important;
+
+}
+.config_item_inline_label {
+	display:inline !important;
+	float:none !important;
+	width:70px !important;
+	text-align:left !important;
+	margin-top:2px !important;
+	padding-top:4px !important;
+}
+
+
+/*エラー表示 */
+#sl_error_display {
+	color:red;
+
+}
+
+/*検索で該当部分強調表示 */
+.sl_search_display {
+	color:blue;
+
+}
+
+/*[TODO]別画面 */
+.modal{opacity: 0; display:none;}
+.modalBody{
+	position: fixed;
+	z-index:1000;
+	background: #E2E4FF;
+	width:690px;
+	left:50%;
+	top:50%;
+	height:300px;
+	overflow:auto;
+/*	height:auto;  */
+	border:1px solid #B7DDF2;}
+#sl_search_result table {
+    width: 670px;
+    border: 1px #000000 solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+	margin:10px 10px 10px 10px;
+}
+#sl_search_result th {
+    padding: 5px;
+    border: #000000 solid;
+    border-width: 0 0 1px 1px;
+    background: #CCCCCC;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+}
+#sl_search_result td {
+    padding: 5px;
+    border: 1px #000000 solid;
+    border-width: 0 0 1px 1px;
+    text-align: center;
+}
+
+#sl_download_result {
+    width: 670px;
+	margin:10px 10px 10px 10px;
+}
+
+#sl_download_result p {
+    font-weight: bold;
+	font-size:larger;
+	margin:10px 10px 10px 10px;
+}
+
+#sl_download_select_area p {
+	height:1.5em;
+}
+#sl_download_result input[type=button] {
+	width:100px;
+}
+#sl_download_result input[type=checkbox] {
+	width:15px;
+}
+#sl_download_result label {
+	width:200px;
+	text-align:left;
+    font-weight: bold;
+}
+
+#booking_button_div #button_insert ,
+#booking_button_div #button_close ,
+#booking_button_div #button_delete {
+	float:right;
+}
+
+#icon-salon-maintenace ,
+#icon-salon-management{
+	background: transparent url(../images/screen-icon.png) no-repeat 2px 1px;
+
+}
+
+.salon_button_updown{
+	width:45px;
+	height:15px;
+	padding:1px;
+	font-size:9px;
+}
+
+.sl_detail_front,
+#sl_front_items {
+	padding:0;
+	margin:0;
+	border-width:0px;
+	table-layout:auto;
+}
+
+
+.sl_detail_front label,
+#sl_front_items  label {
+	margin:3px;
+	vertical-align:top;
+	width:auto !important;
+}
+
+.sl_detail_front td,
+#sl_front_items  td {
+	vertical-align:top;
+	line-height:12px;
+	padding:0;
+	margin:0;
+	border-width:0px;
+	box-sizing::border-box;
+
+}
+
+/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
+/* UPLOADここから               */
+/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
+#image_drop_area{
+	border: 4px dashed #AACFE4;
+	background-color:#F0F4F7;
+	width:700px;
+	min-height:200px;
+	height: auto !important;
+	height: 200px;
+}
+/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
+/* ここまで                     */
+/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
+
+#sl_admin_title:before {
+    content: url(../images/screen-icon.png);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+#all_flg {
+	width:15px !important;
+}
+
+
+
+.sl_intro_box {
+	display: none;
+	left:50px;
+	position: absolute;
+	width: 300px;
+	height: auto;
+	text-align: left;
+	line-height: 25px;
+	background-color: #FFFFFF;
+	border: 1px solid #66CCFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+	z-index:100;
+}
+
+#data_detail .sl_mail_area{
+	height: 300px;
+	margin-right:0px;
+	resize:vertical;
+	width:380px;
+}
+
+div.sl_staff_name:hover  p.sl_intro_box { display: block; }
+
+/*定休日の時間指定*/
+
+.sl_holiday_detail_wrap .sl_from {
+	padding:0px 0px 0px 0px !important;
+	width:50px !important;
+	margin:0px 10px 0px 10px !important;
+	text-align:center !important;
+}
+.sl_holiday_detail_wrap .sl_to {
+	padding:0px 0px 0px 0px !important;
+	width:50px !important;
+	margin:0px 10px 0px 10px !important;
+	text-align:center !important;
+}
+
+.sl_holiday_detail_wrap .sl_holiday_in_label {
+	padding:0px 0px 0px 0px !important;
+	width:auto !important;
+	margin:0px 0px 0px 0px !important;
+	text-align:center !important;
+}
+#sl_holiday_wrap {
+	padding:0px 0px 0px 0px ;
+	margin:0px 0px 20px 0px ;
+}
+
+#sl_sp_date_detail_fr,#sl_sp_date_detail_to {
+	padding:0px 0px 0px 0px !important;
+	width:50px !important;
+	margin:0px 10px 0px 10px !important;
+	text-align:center !important;
+}
+
+/*カテゴリ関連 */
+.sl_category_option {
+	margin:0px 5px 0px 5px !important;
+	padding:0px 0px 0px 0px !important;
+	width:auto !important;
+
+
+}
+
+
+dl#sl_category_wrap  {
+	width:700px;
+	overflow:hidden;
+	border:1px solid #ccc;
+	border-top:none;
+	background:#ddd;
+}
+
+
+dl#sl_category_wrap dt {
+	width:150px;
+	float:left;
+	padding:10px;
+	border-top:1px solid #ccc;
+	margin:0px;
+}
+
+dl#sl_category_wrap label {
+	width:150px;
+}
+
+dl#sl_category_wrap dd {
+	width:509px;
+	float:left;
+	padding:10px;
+	border-left:1px solid #ccc;
+	border-top:1px solid #ccc;
+/*	background:#fff; */
+	margin:0px;
+}
+
+.sl_category_span {
+	height:25px;
+}
+
+dl#sl_category_wrap dd:after {
+	clear:both;
+}
+
+
+
+#sl_setting_data_wrap {
+	border: 1px solid #aacfe4;
+	float:left;
+	padding:15px 0px 15px 0px ;
+	margin:0px 0px 20px 0px ;
+
+}
+
+
+#data_detail .sl_short_width_no_margin {
+	height:auto;
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:2px;
+	width:50px;
+}
+
+#data_detail .sl_middle_width_no_margin {
+	width:100px;
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:2px;
+}
+
+#data_detail .sl_long_width_no_margin {
+	width:200px;
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:2px;
+}
+
+#data_detail .sl_in_span {
+	display:inline-block;
+	text-align:right;
+	width:300px;
+}
+
+#data_detail #sl_original_result {
+	display:inline-block;
+	height:auto;
+	margin:2px;
+}
+
+#data_detail .sl_in_button {
+	float:none;
+}
+
+#data_detail #sl_is_setting_patern {
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:100px;
+	width:15px;
+}
+
+#data_detail .sl_patern_sel {
+	width:100px;
+}
+
+/*PC画面の入力フォーム*/
+#customer_booking_form #data_detail{
+	width:550px;
+}
+
+#customer_booking_form #data_detail label{
+	width:200px;
+}
+
+#customer_booking_form #data_detail textarea{
+	width:300px;
+	margin-right:0px;
+}
+
+#customer_booking_form #data_detail select{
+	height:20px;
+	padding:0px;
+	font-size:12px;
+}
+
+#customer_booking_form #start_time {
+	margin-bottom:20px;
+}
+
+#customer_booking_form span#end_time {
+	width:100px;
+}
+#customer_booking_form #end_time {
+	margin-right:10px;
+}
+
+#customer_booking_form #item_cds {
+	width:300px;
+}
+
+#sl_front_items  {
+	width:300px;
+}
+
+#customer_booking_form #button_search {
+	width:100px;
+	margin-right: 0px;
+}
+
+#customer_booking_form .sl_name_short {
+	margin-right: 0px;
+
+}
+
+/*ReservationScreen */
+#config_menu_column input[type=radio]
+,#config_menu_type input[type=radio] {
+	margin:3px 5px 0px 10px;
+	width:16px;
+}
+#config_menu_column label
+,#config_menu_type label {
+	margin:5px;
+	width:auto;
+}
+
+#config_menu_column1_lbl
+,#config_menu_type_checkbox_lbl {
+	width:300px !important;
+}
+#config_fornt_item_wrap table,
+#config_fornt_item_wrap th,
+#config_fornt_item_wrap td
+{
+	border:solid 1px;
+	border-collapse: collapse;
+}
+
+#config_fornt_item_wrap caption
+{
+	font-weight:bold;
+	text-align:left;
+	margin-bottom:10px;
+}
+
+#config_fornt_item_wrap h3
+{
+	text-align:center;
+}
+
+#config_fornt_item_wrap ol
+{
+	display:table;
+	list-style-position: inside;
+	width:auto;
+}
+
+#config_fornt_item_wrap li
+{
+	left;margin:0px;
+	margin-bottom:10px;
+	text-align:left;
+	width:auto;
+}
+#config_fornt_item_wrap li label,
+#config_fornt_item_wrap li input[type=text]
+{
+	display:inline;
+	float:none;
+	margin-bottom:10px;
+}
+
+#config_fornt_item_wrap li input[type=checkbox]
+{
+	display:inline-block;
+	float:none;
+	margin:3px 5px 0px 10px;
+	width:16px;
+}
+
+.wp-picker-container {
+	margin-left:10px;
+}
+
+.sl_items_disable {
+	color:#c0c0c0;
+}
+
+/*
+	#sl_color_check input[type=checkbox] {
+		display: none;
+		margin: 0;
+	}
+	#sl_color_check input[type=checkbox] + label {
+		padding: 0 0 0 24px;
+	}
+	#sl_color_check input[type=checkbox] + label::before {
+		content: "";
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+
+		background: #fff;
+	}
+	#sl_color_check input[type=checkbox]:disabled + label::before{
+		background: green;
+	}
+	#sl_color_check input[type=checkbox] + label::before {
+		border: 2px solid #ccc;
+	}
+	#sl_color_check input[type=checkbox]:checked + label::after {
+		content: "";
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: block;
+	}
+	#sl_color_check input[type=checkbox]:checked + label::after {
+		left: 3px;
+
+		width: 16px;
+		height: 8px;
+		margin-top: -16px;
+
+		border-left: 3px solid #E71063;
+		border-bottom: 3px solid #E71063;
+
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+*/
+
+
